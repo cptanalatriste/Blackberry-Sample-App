@@ -31,13 +31,13 @@ public class DocumentDAO {
 	public DocumentDetail getDocumentDetail() {
 		DocumentDetail detail = new DocumentDetail();
 		detail.setInvoice("001-0125406");
-		detail.setBlockedBecause("Bloqueado por pago");
+		detail.setBlockedBecause("Bloq. por pago");
 		detail.setReason("");
 		detail.setCreationDate("25/11/2007");
 		detail.setExpirationDate("26/10/2007");
 		detail.setRequestedBy("DEV. TSNET");
 		detail.setMobile("/");
-		detail.setSAPNumber("2007-0200001973");
+		detail.setSAPNumber("0200001973");
 		return detail;
 	}
 

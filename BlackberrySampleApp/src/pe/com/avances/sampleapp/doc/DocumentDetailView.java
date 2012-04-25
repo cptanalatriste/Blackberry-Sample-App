@@ -8,6 +8,7 @@ import net.rim.device.api.ui.XYEdges;
 import net.rim.device.api.ui.component.ButtonField;
 import net.rim.device.api.ui.component.Dialog;
 import net.rim.device.api.ui.component.LabelField;
+import net.rim.device.api.ui.component.NullField;
 import net.rim.device.api.ui.decor.Border;
 import net.rim.device.api.ui.decor.BorderFactory;
 
@@ -38,6 +39,8 @@ public class DocumentDetailView extends BaseView {
 
 	public DocumentDetailView(DocumentDetail documentDetail) {
 		super(SCREEN_TITLE, true);
+		getMainManager().add(new NullField(NullField.FOCUSABLE));
+
 		Border titleBorder = BorderFactory.createBitmapBorder(new XYEdges(8, 9,
 				3, 9), Bitmap.getBitmapResource("fieldset_title_border.png"));
 		Border contentBorder = BorderFactory
@@ -113,7 +116,7 @@ public class DocumentDetailView extends BaseView {
 		columns.add(new TwoColumnField(leftField6, rightField6, USE_ALL_WIDTH));
 
 		ButtonField cancelButton = new ButtonField(CANCEL_BUTTON_LABEL,
-				FIELD_VCENTER);
+				FIELD_VCENTER | ButtonField.CONSUME_CLICK);
 		cancelButton.setMargin(5, 5, 5, 5);
 		cancelButton.setChangeListener(new FieldChangeListener() {
 
@@ -122,7 +125,8 @@ public class DocumentDetailView extends BaseView {
 			}
 		});
 
-		ButtonField freeButton = new ButtonField(FREE_BUTTON_LABEL, FIELD_RIGHT);
+		ButtonField freeButton = new ButtonField(FREE_BUTTON_LABEL, FIELD_RIGHT
+				| ButtonField.CONSUME_CLICK);
 		freeButton.setMargin(5, 5, 5, 5);
 		freeButton.setChangeListener(new FieldChangeListener() {
 

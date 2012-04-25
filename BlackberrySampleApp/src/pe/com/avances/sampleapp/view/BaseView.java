@@ -15,7 +15,7 @@ import org.moonmonkeylabs.ui.container.ViewMainScreen;
 public class BaseView extends ViewMainScreen {
 
 	public BaseView(String screenTitle, boolean useGreyBackground) {
-		super(VERTICAL_SCROLL | USE_ALL_HEIGHT);
+		super(NO_SYSTEM_MENU_ITEMS | VERTICAL_SCROLL | USE_ALL_HEIGHT);
 		LabelField titleLabel = new LabelField(screenTitle);
 		titleLabel.setPadding(4, 0, 3, 4);
 		Font titleFont = titleLabel.getFont().derive(Font.PLAIN,

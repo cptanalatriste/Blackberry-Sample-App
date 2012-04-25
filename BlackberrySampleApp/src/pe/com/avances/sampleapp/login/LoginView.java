@@ -72,7 +72,8 @@ public class LoginView extends BaseView {
 		separator.setMargin(6, 0, 6, 0);
 		mainManager.add(separator);
 
-		ButtonField logInButton = new ButtonField(LOG_IN_LABEL);
+		ButtonField logInButton = new ButtonField(LOG_IN_LABEL,
+				ButtonField.CONSUME_CLICK);
 		logInButton.setChangeListener(new FieldChangeListener() {
 
 			public void fieldChanged(Field field, int context) {
@@ -80,7 +81,8 @@ public class LoginView extends BaseView {
 			}
 		});
 
-		ButtonField cancelButton = new ButtonField(CANCEL_LABEL);
+		ButtonField cancelButton = new ButtonField(CANCEL_LABEL,
+				ButtonField.CONSUME_CLICK);
 		cancelButton.setChangeListener(new FieldChangeListener() {
 
 			public void fieldChanged(Field field, int context) {
